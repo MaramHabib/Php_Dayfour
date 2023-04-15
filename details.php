@@ -104,9 +104,9 @@
                 echo "<td>" . $row["newsletter"] ."</td>";  
                 ?> 
                 <td>
-                <a href="record.php?del=<?php echo $row['st_id']; ?>" > <i class="fa-sharp fa-solid fa-eye"></i></a>
+                <a href="read.php?id=<?php echo $row['st_id']; ?>"> <i class="fa-sharp fa-solid fa-eye"></i></a>
                 <a href="edit.php?edit=<?php echo $row['st_id']; ?>" > <i class="fa-solid fa-pen-to-square"></i></a>
-                <a href="record.php?del=<?php echo $row['st_id']; ?>" > <i class="fa-solid fa-trash"></i></a>
+                <a href="delete.php?del=<?php echo $row['st_id']; ?>" > <i class="fa-solid fa-trash"></i></a>
             </td>
                 <?php    
 

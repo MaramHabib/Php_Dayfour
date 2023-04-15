@@ -114,19 +114,6 @@
         echo "Gender :".$gender;
         echo "<br>";
 //--------------------------------Second attempt ------------
-
-// if (isset($_POST["submit"])) {
-  // $stname = $_POST["name"];
-  // $stmail  = $_POST["email"];
-  // $stgender  = $_POST["gender"];
-  // $stagree = $_POST["agree"];
- 
-  // echo "$stname";
-  // echo "$stmail";
-  // echo "$stgender";
-  // echo "$stagree";
-
-  // if (!empty($stname) && !empty($stmail) && !empty($stgender)) {
       
       /*host, username, password, dbname*/
       $link = mysqli_connect("localhost", "root", "", "cms_class");
@@ -146,63 +133,6 @@
       
       // Close connection
       mysqli_close($link);
-
-//   }else{
-//       echo "Please provide all information";
-//   }
-//   }
-// else {
-//   echo "hello world";
-//   }
-
-
-
-
-
-
-
-
-
-
-
-        //open & close connection
-        // $dbhost = 'localhost';
-        // $dbuser = 'root';
-        // $dbpass = '';
-        // $dbname = 'cms_class';
-        // $link = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname);
-
-        //select
-//        mysqli_select_db( $link,$dbname );
-
-        // create table
-        // $sql = 'CREATE TABLE students( st_id INT NOT NULL AUTO_INCREMENT,
-        // st_name VARCHAR(20) NOT NULL,
-        // gender  VARCHAR(10) NOT NULL,
-        // receive Boolean,
-        // primary key ( st_id ))';
-
-
-
-      // $stname = $_REQUEST['name'];
-
-      // $stname = $_POST["name"];
-
-
-    //  $stgender = $_REQUEST['gender'];
-    //   $stagree = $_REQUEST['agree'];
-
-          // $sql = "INSERT INTO students(st_name,email,gender,newsletter)
-          // VALUES ( $stname , '$email' , '$gender','$agree')";
-       
-          // $retval = mysqli_query( $link,$sql );
-          
-          // if(! $retval ) {
-          //    die('Could not insert to table: ' . mysqli_error($link));
-          // }
-           
-          // echo "<br>Data inserted to table successfully\n";
-          // mysqli_close($link);
   
     ?>
   

@@ -74,6 +74,7 @@
     return $data;
             }
 
+    $id=$_GET['id'];
 
 //  Linking To Database
 $link = mysqli_connect("localhost", "root", "", "cms_class");
@@ -84,23 +85,29 @@ $link = mysqli_connect("localhost", "root", "", "cms_class");
       }
       
       // Attempt insert query execution
-  $sql = "INSERT INTO students(st_name, email, gender, newsletter) VALUES ('{$name}', '{$email}' , '{$gender}', '{$agree}')";
+  $sql = "SELECT * FROM students WHERE st_id= $id";
   $retval = mysqli_query( $link,$sql );
 
-      if(mysqli_query($link, $sql)){
-        echo "<div class=\"container\">";
-        echo "<h4 style=\"background-color:green;color:white;padding:10px 10px;\"> Record inserted successfully. </h4>";
+//   $row = mysqli_fetch_assoc($retval)
+        //second fetch Data
+          while ($row = $retval -> fetch_assoc()) { 
+            $Id = $row['st_id'];
+            $Name = $row['st_name'];
+            $Email = $row['email'];
+            $Gender = $row['gender'];
 
-          echo "<h2> View Records </h2>";
+        echo "<div class=\"container\">";
+
+          echo "<h2> View Record </h2>";
           echo "<br>";
           echo "<hr>";
           echo "<h4>Name</h4><br>";
-          echo "$name";
+          echo "$Name";
           echo "<h4>Email</h4><br>";
-          echo "$email";
+          echo "$Email";
           echo "<h4>Gender</h4>";
           echo "<br>";
-          echo "$gender";
+          echo "$Gender";
           echo "<br>";
 
           echo ($agree=='0') ? 'you will receive mail from us' : 'you willnot receive any mail';
@@ -108,9 +115,7 @@ $link = mysqli_connect("localhost", "root", "", "cms_class");
           echo "<button class=\"button\" onclick=\"window.location.href = 'index.php';\"> Back </button>";
           echo "</div>";
 
-      } else{
-          echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
-      }
+      } 
       
       // Close connection
       mysqli_close($link);
